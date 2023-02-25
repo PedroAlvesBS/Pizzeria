@@ -1,0 +1,12 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+
+  <p>Place a new order:</p>
+  <form action="{% url 'dashboard:order' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add order</button>
+  </form>
+
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+  {% csrf_token %}
+  <div class="mt-5 ms-3">
+    <h1>Pizzas</h1>
+  </div>
+  <form>
+    <div class="mt-4 p-3">
+      <div class="mx-5 mb-2">
+          {% for pizza in pizzas %}
+          <div class="card">
+            <div class="row">
+              <div class="col-sm-1">
+                <div class="form-check p-5">
+                  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="{{ pizza.pizza_number }}">
+                </div>
+              </div>
+              <div class="col-sm-11">
+                <div class="card-body">
+                  <h4 class="card-title">{{ pizza.name }}</h4>
+                  <p class="card-text">{{ pizza.toppings }}</p>
+                  <p class="card-text">{{ pizza.price }}</p>
+                  <a href="#" class="card-link">Card link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+            <h3>Nothing to see here</h3>
+          {% endfor %}
+        </div>
+    </div>
+  </form>  
+{% endblock content %}
