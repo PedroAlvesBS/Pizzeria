@@ -2,3 +2,8 @@ myvenv/*
 pizzeria/__pycache__/*
 db.sqlite3
 .env
+dashboard/migrations
+pizza.txt
+dashboard/__pycache__
+users/__pycache__
+users/migrations
